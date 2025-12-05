@@ -28,7 +28,6 @@ def load_shotgun():
     
 """
 def round():
-    gun = shotgun
     who starts round
     pvpp
     items
