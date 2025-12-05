@@ -33,6 +33,6 @@ def main():
     countinue/quit
     shoot self/other player
     '''
-    
+print("testing github")
     
 Players()
