@@ -6,7 +6,7 @@ def Players():
     player2 = "dealer"
     print(f"player2: {player2}")
     
-print("testing push and pull github")
+
 
 def shotgun():
     chance = random.choice([i/10 for i in range (11)])
@@ -33,6 +33,6 @@ def main():
     countinue/quit
     shoot self/other player
     '''
-print("testing github")
+
     
 Players()
