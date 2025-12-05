@@ -1,9 +1,9 @@
 import random
 
 def Players():
-    player = None
+    player = "player"
     print(f"player: {player}")
-    player2 = None
+    player2 = "dealer"
     print(f"player2: {player2}")
     
 
