@@ -29,17 +29,11 @@ def load_shotgun():
 """
 def round():
     who starts round
-    pvpp
-    items
-    
 
 '''
 def main():
-    item logic
     round logic
-    reviving
     round count
-    countinue/quit
     shoot self/other player
     '''
 """
