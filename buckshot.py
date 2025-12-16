@@ -1,11 +1,9 @@
 import random
 
 def Players():
-    player1_name = input("please enter player 1's name. ")
-    player2_name = input("please enter player 2's name. ")
-    player = player1_name
+    player = None
     print(f"player: {player}")
-    player2 = player2_name
+    player2 = None
     print(f"player2: {player2}")
     
 
