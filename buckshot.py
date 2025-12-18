@@ -13,16 +13,14 @@ class Player:
     
     def is_alive(self):
         return self.health > 0
-    
 def shotgun():
     chance = random.choice([i/10 for i in range (11)])
     if chance <= 0.5:
         print("blank")
         return "blank"
-    elif chance >= 0.6:
+    else:
         print("live")
         return "live"
-    
 def load_shotgun():
     num_of_shells = random.randint(4, 9)
     shells = []
@@ -33,16 +31,17 @@ def load_shotgun():
     blank_count = shells.count('blank')
     print(f"\n[Shotgun loaded: {num_of_shells} shells - {live_count} live, {blank_count} blank]")
     return shells
-
 def calculate_shoot_self_value(shells, known_info):
+    """Estimate probability that the next shot is a blank (safe) based on remaining shells."""
     if not shells:
-        return 0
+        return 0.0
     live_count = shells.count('live')
     blank_count = shells.count('blank')
     total = len(shells)
     if total == 0:
-        return 0
-        
+        return 0.0
+    # Probability that a randomly chosen next shell is blank
+    return blank_count / total 
 def greedy_ai_decision(shells, player, opponent):
     if not shells:
         return "opponent"
@@ -88,8 +87,8 @@ def shoot(target, shells, shooter, opponent):
         return False  
     else:
         print(f"{shooter.name} survives and gets another turn!")
-        return target == 'self' 
-
+        # Blank shell: shooter always gets another turn
+        return True
 def player_turn(player, opponent, shells):
     """Handle player's turn"""
     while True:
@@ -113,7 +112,6 @@ def player_turn(player, opponent, shells):
         
         if not gets_extra_turn:
             return True
-
 def game_round(player1, player2):
     """Play one round"""
     shells = load_shotgun()
@@ -131,7 +129,6 @@ def game_round(player1, player2):
         
 
         current_player = player2 if current_player == player1 else player1
-
 def main():
     print("=== BUCKSHOT ROULETTE ===\n")
     
